@@ -50,8 +50,8 @@
             </div>
         </div>
         <h2 id="proposal-text">Will you be my Girlfreind?</h2>
-        <button class="yes-button" onclick="acceptProposal()">Yes</button>
-        <button class="no-button" onclick="nextGif()">No</button>
+        <button id="yes-button" class="yes-button" onclick="acceptProposal()">Yes</button>
+        <button id="no-button" class="no-button" onclick="nextGif()">No</button>
     </div>
     <div id="celebration" class="confetti">🎉 Yay! 🎉</div>
 
@@ -60,15 +60,21 @@
         const gifs = [
             {
                 embed: '<div class="tenor-gif-embed" data-postid="9530388445089057373" data-share-method="host" data-aspect-ratio="1.07843" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-gif-gif-9530388445089057373">Bubu Dudu Gif GIF</a> from <a href="https://tenor.com/search/bubu+dudu+gif-gifs">Bubu Dudu Gif GIFs</a></div>',
-                text: 'Will you be my Girlfriend?'
+                text: 'Will you be my Girlfriend?',
+                noText: 'Hmm, I don’t know...',
+                yesText: 'Maybe...'
             },
             {
                 embed: '<div class="tenor-gif-embed" data-postid="505260288822264422" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-sseeyall-gif-505260288822264422">Bubu Dudu Sseeyall Sticker</a>from <a href="https://tenor.com/search/bubu+dudu-stickers">Bubu Dudu Stickers</a></div>',
-                text: 'Are you sure you don’t want to be my Girlfreind?'
+                text: 'Are you sure you don’t want to be my Girlfreind?',
+                noText: 'Do I really?',
+                yesText: 'Of course!'
             },
             {
                 embed: '<div class="tenor-gif-embed" data-postid="14822343715819812873" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/dudu-cook-dudu-food-dudu-bubu-cook-gif-14822343715819812873">Dudu Cook Dudu Food Sticker</a>from <a href="https://tenor.com/search/dudu+cook-stickers">Dudu Cook Stickers</a></div>',
-                text: 'Please reconsider, I made Hotpot'
+                text: 'Please reconsider, I made Hotpot',
+                noText: 'Im not hungry tho',
+                yesText: 'Marry me now!!!'
             }
             // Add more objects as needed
         ];
@@ -78,6 +84,8 @@
             currentGifIndex = (currentGifIndex + 1) % gifs.length;
             document.getElementById('gif-container').innerHTML = gifs[currentGifIndex].embed;
             document.getElementById('proposal-text').innerText = gifs[currentGifIndex].text;
+            document.getElementById('no-button').innerText = gifs[currentGifIndex].noText;
+            document.getElementById('yes-button').innerText = gifs[currentGifIndex].yesText;
             tenorEmbed();
         }
 
