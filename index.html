@@ -38,6 +38,21 @@
             display: none;
             font-size: 40px;
         }
+        .celebration-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .celebration-container .tenor-gif-embed {
+            max-width: 400px; /* Adjust the width */
+            width: 100%; /* Responsive scaling */
+            margin-top: 15px;
+        }
+        .celebration-text {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -93,10 +108,12 @@
             document.getElementById('proposal-container').style.display = 'none';
             document.getElementById('celebration').style.display = 'block';
             document.getElementById('celebration').innerHTML = `
-                <h2>OMG the perfect couple has been made!</h2>
-                <div class="tenor-gif-embed" data-postid="1613492217735624274" data-share-method="host" data-aspect-ratio="1" data-width="100%">
-                    <a href="https://tenor.com/view/bubu-dudu-sseeyall-gif-1613492217735624274">Bubu Dudu Sseeyall Sticker</a> from 
-                    <a href="https://tenor.com/search/bubu+dudu+stickers">Bubu Dudu Stickers</a>
+                <div class="celebration-container">
+                    <h2>OMG the perfect couple has been made!</h2>
+                    <div class="tenor-gif-embed" data-postid="1613492217735624274" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+                        <a href="https://tenor.com/view/bubu-dudu-sseeyall-gif-1613492217735624274">Bubu Dudu Sseeyall Sticker</a> from 
+                        <a href="https://tenor.com/search/bubu+dudu+stickers">Bubu Dudu Stickers</a>
+                    </div>
                 </div>
             `;
             tenorEmbed();
