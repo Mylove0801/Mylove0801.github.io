@@ -1,7 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        img {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .yes-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .no-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .confetti {
+            display: none;
+            font-size: 40px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div id="proposal-container">
+        <div id="gif-container">
+            <div class="tenor-gif-embed" data-postid="9530388445089057373" data-share-method="host" data-aspect-ratio="1.07843" data-width="100%">
+                <a href="https://tenor.com/view/bubu-dudu-gif-gif-9530388445089057373">Bubu Dudu Gif GIF</a> from 
+                <a href="https://tenor.com/search/bubu+dudu+gif-gifs">Bubu Dudu Gif GIFs</a>
+            </div>
+        </div>
+        <h2 id="proposal-text">Will you be my Valentine?</h2>
+        <button class="yes-button" onclick="acceptProposal()">Yes</button>
+        <button class="no-button" onclick="nextGif()">No</button>
+    </div>
+    <div id="celebration" class="confetti">🎉 Yay! 🎉</div>
+
+    <script>
+        const gifs = [
+            '<div class="tenor-gif-embed" data-postid="9530388445089057373" data-share-method="host" data-aspect-ratio="1.07843" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-gif-gif-9530388445089057373">Bubu Dudu Gif GIF</a> from <a href="https://tenor.com/search/bubu+dudu+gif-gifs">Bubu Dudu Gif GIFs</a></div>'
+        ];
+        let currentGifIndex = 0;
+
+        function nextGif() {
+            currentGifIndex = (currentGifIndex + 1) % gifs.length;
+            document.getElementById('gif-container').innerHTML = gifs[currentGifIndex];
+            tenorEmbed();
+        }
+
+        function acceptProposal() {
+            document.getElementById('proposal-container').style.display = 'none';
+            document.getElementById('celebration').style.display = 'block';
+            document.getElementById('celebration').innerHTML += '<br><img src="confetti.gif" alt="Confetti">';
+        }
+
+        function tenorEmbed() {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://tenor.com/embed.js';
+            script.async = true;
+            document.body.appendChild(script);
+        }
+    </script>
 </body>
 </html>
