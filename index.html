@@ -58,12 +58,6 @@
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     <script>
         const gifs = [
-            // {
-            //     embed: '<div class="tenor-gif-embed" data-postid="9530388445089057373" data-share-method="host" data-aspect-ratio="1.07843" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-gif-gif-9530388445089057373">Bubu Dudu Gif GIF</a> from <a href="https://tenor.com/search/bubu+dudu+gif-gifs">Bubu Dudu Gif GIFs</a></div>',
-            //     text: 'Will you be my Girlfriend?',
-            //     noText: 'Hmm, I don’t know...',
-            //     yesText: 'Maybe...'
-            // },
             {
                 embed: '<div class="tenor-gif-embed" data-postid="505260288822264422" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-sseeyall-gif-505260288822264422">Bubu Dudu Sseeyall Sticker</a>from <a href="https://tenor.com/search/bubu+dudu-stickers">Bubu Dudu Stickers</a></div>',
                 text: 'Are you sure you don’t want to be my Girlfreind?',
@@ -75,8 +69,11 @@
                 text: 'Please reconsider, I made Hotpot',
                 noText: 'Im not hungry tho',
                 yesText: 'Marry me now!!!'
+            },
+            {
+
             }
-            // Add more objects as needed
+            
         ];
         let currentGifIndex = 0;
 
@@ -92,7 +89,9 @@
         function acceptProposal() {
             document.getElementById('proposal-container').style.display = 'none';
             document.getElementById('celebration').style.display = 'block';
-            document.getElementById('celebration').innerHTML += '<br><img src="confetti.gif" alt="Confetti">';
+            document.getElementById('celebration').innerHTML = '<h2>OMG the perfect couple has been made!</h2> <div class="tenor-gif-embed" data-postid="1613492217735624274" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-sseeyall-gif-1613492217735624274">Bubu Dudu Sseeyall Sticker</a>from <a href="https://tenor.com/search/bubu+dudu-stickers">Bubu Dudu Stickers</a></div>';
+
+            
         }
 
         // Re-initialize Tenor Embed if needed (e.g., after changing content dynamically)
